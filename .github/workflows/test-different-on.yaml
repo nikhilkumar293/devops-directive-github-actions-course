@@ -22,3 +22,6 @@ jobs:
       - run: echo "Current SHA is ${{ github.sha }}"
       - run: echo "Repository is ${{ github.repository }}"
       - run: echo "Actor is ${{ github.actor }}"
+      - run: echo "Workflow is ${{ github.workflow }}"
+      - run: echo "Job is ${{ github.job }}"
+      - run: echo "Run number is ${{ github.run_number }}"
