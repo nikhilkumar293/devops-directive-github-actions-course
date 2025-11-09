@@ -1,0 +1,24 @@
+name: Test Different On Events
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - "testing-branch/*"
+
+  pull_request:
+    paths: 
+      - "03-core-features/filters/*.md"
+      - "!03-core-features/filters/*.txt"
+
+jobs:
+  test-different-on:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This workflow runs on different 'on' events like workflow_dispatch,push to specific branches, and pull requests affecting specific paths."
+      - run: echo "Current event name is ${{ github.event_name }}"
+      - run: echo "Current ref is ${{ github.ref }}"
+      - run: echo "Current SHA is ${{ github.sha }}"
+      - run: echo "Repository is ${{ github.repository }}"
+      - run: echo "Actor is ${{ github.actor }}"
