@@ -1,8 +1,7 @@
 name: Testing World
-description: A simple "Hello, World!" program in bash.
 
 on:
-  woekflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   hello_world:
