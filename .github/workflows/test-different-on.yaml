@@ -20,3 +20,5 @@ jobs:
       - run: echo "Current event name is ${{ github.event_name }}"
       - run: echo "Current ref is ${{ github.ref }}"
       - run: echo "Current SHA is ${{ github.sha }}"
+      - run: echo "Repository is ${{ github.repository }}"
+      - run: echo "Actor is ${{ github.actor }}"
