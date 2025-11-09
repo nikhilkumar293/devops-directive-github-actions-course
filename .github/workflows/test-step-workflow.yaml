@@ -1,0 +1,23 @@
+name: test step type workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test_step_workflow-1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from test step workflow1!"
+
+  test_step_workflow-2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from test step workflow2!"
+
+  test_step_workflow-3:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d # v1.1
+        with:
+          who-to-greet: 'Nikhil from test step workflow3!'
+
