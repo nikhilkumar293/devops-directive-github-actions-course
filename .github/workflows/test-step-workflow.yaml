@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello from test step workflow2!"
+    needs: test_step_workflow-1
 
   test_step_workflow-3:
     runs-on: ubuntu-latest
@@ -20,4 +21,7 @@ jobs:
       - uses: actions/hello-world-javascript-action@081a6d193d1dcb38460df1e6927486d748730f9d # v1.1
         with:
           who-to-greet: 'Nikhil from test step workflow3!'
+    needs: 
+      - test_step_workflow-2
+      - test_step_workflow-1
 
